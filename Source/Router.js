@@ -16,7 +16,11 @@ provides: Router
 ...
 */
 
-(function() {
+var Core = require('Core');
+var typeOf = Core.typeOf;
+var Class = Core.Class;
+var Events = Core.Events;
+var Options = Core.Options;
 
 var Route = new Class({
 
@@ -119,7 +123,7 @@ var Route = new Class({
 
 });
 
-var Router = this.Router = new Class({
+var Router = module.exports = new Class({
 
   Implements: [Options, Events],
 
@@ -297,5 +301,3 @@ var lexer = {
 Router.getDefaultLexer = function() {
   return lexer;
 };
-
-})();
